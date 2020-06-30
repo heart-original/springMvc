@@ -85,7 +85,7 @@ public class MyController {
     }
 
 
-    @RequestMapping(value = "/some.do")
+    /*@RequestMapping(value = "/some.do")
     public ModelAndView doSome(String name,Integer age) throws MyException {
         ModelAndView mv  = new ModelAndView();
 
@@ -97,6 +97,16 @@ public class MyController {
             throw new AgeException("年龄比较大！！！");
         }
 
+        mv.addObject("myname",name);
+        mv.addObject("myage",age);
+        mv.setViewName("show");
+        return mv;
+    }*/
+
+    @RequestMapping(value = "/some.do")
+    public ModelAndView doSome(String name,Integer age)  {
+        System.out.println("=====执行MyController中的doSome方法=====");
+        ModelAndView mv  = new ModelAndView();
         mv.addObject("myname",name);
         mv.addObject("myage",age);
         mv.setViewName("show");

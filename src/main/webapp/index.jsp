@@ -6,26 +6,18 @@
 %>
 <html>
 <head>
-    <title>功能入口</title>
+    <title>Title</title>
     <base href="<%=basePath%>" />
 </head>
 <body>
-<%--<div align="center">
-    <p>SSM整合的例子</p>
-    <table>
-        <tr>
-            <td><a href="addStudent.jsp"> 注册学生</a></td>
-        </tr>
-        <tr>
-            <td><a href="listStudent.jsp">浏览学生</a></td>
-        </tr>
-    </table>
-</div>--%>
-<p>处理异常的，全局异常处理</p>
+
+<p>一个拦截器</p>
 <form action="some.do" method="post">
     姓名：<input type="text" name="name"> <br/>
     年龄：<input type="text" name="age"> <br/>
     <input type="submit" value="提交请求">
 </form>
+
+
 </body>
 </html>
