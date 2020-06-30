@@ -10,7 +10,7 @@
     <base href="<%=basePath%>" />
 </head>
 <body>
-<div align="center">
+<%--<div align="center">
     <p>SSM整合的例子</p>
     <table>
         <tr>
@@ -20,7 +20,12 @@
             <td><a href="listStudent.jsp">浏览学生</a></td>
         </tr>
     </table>
-</div>
-
+</div>--%>
+<p>处理异常的，全局异常处理</p>
+<form action="some.do" method="post">
+    姓名：<input type="text" name="name"> <br/>
+    年龄：<input type="text" name="age"> <br/>
+    <input type="submit" value="提交请求">
+</form>
 </body>
 </html>

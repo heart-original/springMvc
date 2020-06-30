@@ -2,6 +2,9 @@ package controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import domain.Student;
+import exception.AgeException;
+import exception.MyException;
+import exception.NameException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -81,4 +84,22 @@ public class MyController {
         return "Hello SpringMVC 返回对象，表示数据";
     }
 
+
+    @RequestMapping(value = "/some.do")
+    public ModelAndView doSome(String name,Integer age) throws MyException {
+        ModelAndView mv  = new ModelAndView();
+
+        if (!"张三".equals(name)) {
+            throw new NameException("姓名不正确！！！");
+        }
+
+        if (age == null || age > 80) {
+            throw new AgeException("年龄比较大！！！");
+        }
+
+        mv.addObject("myname",name);
+        mv.addObject("myage",age);
+        mv.setViewName("show");
+        return mv;
+    }
 }
